@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rohith</title>
+    </head>
+    <body>
+        <style>
+            #prev{
+                position: fixed;
+                left: 10px;
+                top: 40%;
+                background: white;
+            }
+            #next{
+                position: absolute;
+                right: 860px;
+                top: 40%;
+                background: white;
+            }
+        </style>
+        <div id="imageContainer">
+
+            <img id="prev" onclick="prev()" src="images/arrow_back.png">
+
+            <img id="contentImage" width="500" height="500" src="" alt="Image">
+        
+       
+        <img id="next" onclick="next()" src="images/arrow_forward.png">
+        </div>
+<script>
+    var imageArray = [
+    "https://i.ibb.co/qRGBCFP/Screenshot-28.png",
+    "https://i.ibb.co/Z6tHJ62/Screenshot-36.png",
+    "https://i.ibb.co/jyQJwjh/Rohith-Sivakumar.jpg",
+    // Add more image URLs as needed
+];
+var currentIndex = 0;
+
+function showImage() {
+    document.getElementById("contentImage").src = imageArray[currentIndex];
+}
+
+function next() {
+    if (currentIndex < imageArray.length - 1) {
+        currentIndex++;
+        showImage();
+    }
+}
+
+function prev() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        showImage();
+    }
+}
+
+// Initial display
+showImage();
+
+</script>
+
+
+
+    </body>
+</html>
